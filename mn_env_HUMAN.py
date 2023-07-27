@@ -1,5 +1,5 @@
 #the following code provides a user interface and game logic to play the game Misére-Nim between 2 human players
-
+#code structure follows the tutorial 'Prof. Dr. Oliver Hofmann, 2D-Spiele mit pygame, https://www.youtube.com/watch?v=_B5qc3jtPIE'
 import pygame
 import secrets
 from Button import Button
