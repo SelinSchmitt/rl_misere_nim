@@ -94,7 +94,7 @@ def player2(window, font, white, gray):
 
 
 def startKI(updatedDict): 
-        #get the current state of the game
+        #ai chooses max action from qtable
         current_state = list(updatedDict.values())
         if current_state:
             for outer_dict, inner_dict in qtable.items(): 
@@ -106,7 +106,7 @@ def startKI(updatedDict):
                       
                         return max_value
                     
-        else: #ki fängt an, erster Zustand
+        else:
             for outer_dict, inner_dict in qtable.items():
                 if str(outer_dict) == outer_dict:
                     for k, v in qtable[outer_dict].items(): 
@@ -118,6 +118,7 @@ def startKI(updatedDict):
 
 
 def kiRemoveButtons(updatedDict, button_dict, max_value):
+    #ai removes the chosen buttons
     global simulateclick
     button_dict.update()
 
@@ -307,8 +308,7 @@ def disableRows(ui_elements, current_row):
     for button in ui_elements:
         if button.row_nmb != current_row and button.enabled != False:
             button.row_act = False
-          #  if button in deleted_buttons:
-           #    continue 
+
 
     
 def updateHumanDict(ui_elem, npc_dict):
