@@ -1,3 +1,4 @@
+#the following code provides a terminal version of Misére-Nim
 import secrets
 
 players = [2, 1]
