@@ -95,26 +95,27 @@ def player2(window, font, white, gray):
 
 
 def startKI(updatedDict): 
-        #ai chooses max action from qtable
-        current_state = list(updatedDict.values())
-        if current_state:
-            for outer_dict, inner_dict in qtable.items(): 
-                if str(current_state) == outer_dict:
-                    for k, v in qtable[outer_dict].items(): 
-                        inner_dict = qtable[outer_dict] 
-                        max_wert = max(inner_dict, key=lambda x: inner_dict[x])
-                        max_value = ast.literal_eval(max_wert)
+    #ai chooses max action from qtable
+    #line 106 and 116 references to 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
+    current_state = list(updatedDict.values())
+    if current_state:
+        for outer_dict, inner_dict in qtable.items(): 
+            if str(current_state) == outer_dict:
+                for k, v in qtable[outer_dict].items(): 
+                    inner_dict = qtable[outer_dict] 
+                    max_wert = max(inner_dict, key=lambda x: inner_dict[x])
+                    max_value = ast.literal_eval(max_wert)
                       
-                        return max_value
+                    return max_value
                     
-        else:
-            for outer_dict, inner_dict in qtable.items():
-                if str(outer_dict) == outer_dict:
-                    for k, v in qtable[outer_dict].items(): 
-                        inner_dict = qtable[outer_dict] 
-                        max_wert = max(inner_dict, key=lambda x: inner_dict[x])
-                        max_value = ast.literal_eval(max_wert)
-                        return max_value
+    else:
+        for outer_dict, inner_dict in qtable.items():
+            if str(outer_dict) == outer_dict:
+                for k, v in qtable[outer_dict].items(): 
+                    inner_dict = qtable[outer_dict] 
+                    max_wert = max(inner_dict, key=lambda x: inner_dict[x])
+                    max_value = ast.literal_eval(max_wert)
+                    return max_value
 
 
 
