@@ -2,7 +2,6 @@ import secrets
 import random
 
 
-
 def init():
     global players
     global current_player
@@ -18,8 +17,6 @@ def init():
 
     my_dict = {1:1, 2:3, 3:5, 4:7}
     saved_moves = []
-
-
 
     epsilon = 0.2
 
@@ -40,8 +37,10 @@ def playGame():
     current_player = int(not current_player)
     beginnging_Player = current_player
     available_keys = [key for key in my_dict if my_dict[key] != 0]
-    
-    if episode < 10 : 
+
+    #epsilon-greedy:
+    #line 72 references to 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
+    if episode < 100000: 
         print('Exploration unter 100000')
         random_key = random.choice(available_keys)
         values = my_dict[random_key]
@@ -63,33 +62,27 @@ def playGame():
             makeMove(saved_key, random_key, random_value)            
         
         else: 
-            
             print('Ausbeutung')
             for outer_dict, inner_dict in qtable.items(): 
-                
                 values_list = list(my_dict.values())
                 if str(values_list) in outer_dict:
                     current_state = qtable[str(values_list)]
                     print('current state ', current_state)
                     max_value = max(current_state.values())
-                    max_key = max(current_state.items(), key=lambda x: x[1])[0] #QUELLE [0] -> damit nur key 
-                    print('MAX VALUE',max_key,  max_value)
+                    max_key = max(current_state.items(), key=lambda x: x[1])[0] 
+                    print('best action with highest q-value',max_key,  max_value)
                     saved_key = max_key
-                    random_k= int(max_key[1]) #teilt den key nochmal auf damit reihe und anzahl bekannt ist (2, 1) -> 2 1
+                    random_k= int(max_key[1]) 
                     random_v = int(max_key[4])
-                    #print(random_k, random_v)
                     print('search in qtable', random_k, random_v)
                     print('Player %s pick Pile: ' % players[current_player], random_k )
                     print('How many do you want to subtract?: ', random_v)
                     makeMove(saved_key, random_k, random_v)                    
                 
-    
-
-    
    
 def makeMove(saved_key, k, v):
     if k in [1,2,3,4,5,6,7,0] and  my_dict[k] - v >= 0:  
-        original_value = list(my_dict.values())  # Speichern des ursprünglichen Werts von my_dict
+        original_value = list(my_dict.values()) 
 
         updatedDict = subtract(my_dict, k, v)
 
@@ -105,7 +98,7 @@ def makeMove(saved_key, k, v):
         print("not possible")
 
      
-def subtract(my_dict, entry, sub): #kürzen
+def subtract(my_dict, entry, sub): 
     
     if(entry == 1):
         my_dict[1] -= sub
@@ -140,7 +133,8 @@ def getReward(tmp_dict):
     
   
 def InitializeTable(saved_moves, tmp_dict):
-    # Line 149 references to  https://www.tutorialsteacher.com/python/dict-setdefault?utm_content=cmp-true
+    # Line 147 references to  Tutorials Teacher, Python Dictionary setdefault() Method, 
+    #https://www.tutorialsteacher.com/python/dict-setdefault?utm_content=cmp-true
     tmp_dict = {}
     for move in saved_moves:
 
@@ -148,23 +142,17 @@ def InitializeTable(saved_moves, tmp_dict):
         tmp_dict_state = str(tmp_dict_key)
         tmp_dict.setdefault(tmp_dict_state, {}) 
         tmp_list = eval(tmp_dict_state) 
-     
-   
-        
         if move[0]  == tmp_list:   
             inner_key = move[1]
             inner_dict = tmp_dict[tmp_dict_state] 
             inner_dict.setdefault(str(inner_key), 0) 
-            getReward(tmp_dict)
-         
-           
-            
+            getReward(tmp_dict)   
 
     return tmp_dict  
     
 
 
-episodes = 2#200.000
+episodes = 200000
 tmp_dict = {}
 qtable = {}
 new_value = 0
@@ -175,7 +163,6 @@ for episode in range(episodes):
         playGame()
           
         if all(value == 0 for value in my_dict.values()):
-            print('ENDE EINER EPISODEN')
             tmp_dict = InitializeTable(saved_moves, tmp_dict)
 
             print('temporary dict: ', tmp_dict)
@@ -217,4 +204,3 @@ for episode in range(episodes):
             break
 
             
- #QUELLE LAMBDA
