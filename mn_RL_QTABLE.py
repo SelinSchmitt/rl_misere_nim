@@ -1,3 +1,4 @@
+#the following code initializes and trains the qtable
 import secrets
 import random
 
