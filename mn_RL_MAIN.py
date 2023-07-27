@@ -1,5 +1,5 @@
 #the following code provides the main game user interface to play Misére-Nim against a trained ai
-
+#code structure follows the tutorial 'Prof. Dr. Oliver Hofmann, 2D-Spiele mit pygame, https://www.youtube.com/watch?v=_B5qc3jtPIE'
 import pygame
 import secrets
 import random
