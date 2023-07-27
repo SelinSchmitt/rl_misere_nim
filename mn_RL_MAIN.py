@@ -37,7 +37,8 @@ def init():
     
     npc_dict ={1:1, 2:3, 3:5, 4:7}
 
-
+    #line 42 and 43 are based on 'Secrets | Python module to Generate secure random numbers'
+    #https://www.geeksforgeeks.org/secrets-python-module-generate-secure-random-numbers/
     players = [2, 1]
     current_player = secrets.randbelow(len(players))
     
