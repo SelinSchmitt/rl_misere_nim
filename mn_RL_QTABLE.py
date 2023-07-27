@@ -40,7 +40,7 @@ def playGame():
     available_keys = [key for key in my_dict if my_dict[key] != 0]
 
     #epsilon-greedy:
-    #line 72 references to 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
+    #line 73 references to 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
     if episode < 100000: 
         print('Exploration unter 100000')
         random_key = random.choice(available_keys)
