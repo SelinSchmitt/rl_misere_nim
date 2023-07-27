@@ -1,6 +1,9 @@
 #the following code provides a terminal version of Misére-Nim
 import secrets
 
+#line 7 and 8 are based on 'Secrets | Python module to Generate secure random numbers'
+#https://www.geeksforgeeks.org/secrets-python-module-generate-secure-random-numbers/
+
 players = [2, 1]
 current_player = secrets.randbelow(len(players))
 
@@ -19,7 +22,7 @@ def playGame(current_player):
             entry = int(input('Player %s pick Pile: ' % players[current_player] ))
             sub = int(input('How many do you want to subtract?: ')) 
 
-            if sub in [1,2,3,4,5,6,7,0]: #no negative entrys (-2, -3, ...)
+            if sub in [1,2,3,4,5,6,7,0]: 
                 subtract(entry, sub)
             
                 if(dict[1] < 0) or (dict[2] < 0) or (dict[3] < 0) or (dict[4] < 0):
@@ -67,7 +70,7 @@ playGame(current_player)
 
         
 
-#player switch code from: https://pythonprogramming.net/bringing-together-learn-python-3-tutorials/ 
+
     
 
 
