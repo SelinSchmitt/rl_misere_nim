@@ -1,4 +1,5 @@
 #the following code initializes and trains the qtable
+#code structure follows the tutorial 'Prof. Dr. Oliver Hofmann, 2D-Spiele mit pygame, https://www.youtube.com/watch?v=_B5qc3jtPIE'
 import secrets
 import random
 
@@ -11,7 +12,7 @@ def init():
     global saved_moves
     global epsilon
     
-    #line 16 and 17 are based on 'Secrets | Python module to Generate secure random numbers'
+    #line 17 and 18 are based on 'Secrets | Python module to Generate secure random numbers'
     #https://www.geeksforgeeks.org/secrets-python-module-generate-secure-random-numbers/
     players = [2, 1]
     current_player = secrets.randbelow(len(players))
@@ -41,7 +42,7 @@ def playGame():
     available_keys = [key for key in my_dict if my_dict[key] != 0]
 
     #epsilon-greedy:
-    #line 74 references to 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
+    #line 75 references to 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
     if episode < 100000: 
         print('Exploration unter 100000')
         random_key = random.choice(available_keys)
@@ -135,7 +136,7 @@ def getReward(tmp_dict):
     
   
 def InitializeTable(saved_moves, tmp_dict):
-    # Line 150 references to  Tutorials Teacher, Python Dictionary setdefault() Method, 
+    # Line 151 references to  Tutorials Teacher, Python Dictionary setdefault() Method, 
     #https://www.tutorialsteacher.com/python/dict-setdefault?utm_content=cmp-true
     tmp_dict = {}
     for move in saved_moves:
