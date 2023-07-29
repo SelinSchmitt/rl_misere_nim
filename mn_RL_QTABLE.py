@@ -118,6 +118,9 @@ def subtract(my_dict, entry, sub):
     return my_dict  
 
 def getReward(tmp_dict):
+    #lines 128 and 134 follow the tutorial from 'Dionysia Lemonaki, Python Reverse List – Reversing an Array in Python, 
+    #https://www.freecodecamp.org/news/python-reverse-list-reversing-an-array-in-python/'
+    
     pos_reward = 1
     neg_reward = -1
    
@@ -136,7 +139,7 @@ def getReward(tmp_dict):
     
   
 def InitializeTable(saved_moves, tmp_dict):
-    # Line 151 references to  Tutorials Teacher, Python Dictionary setdefault() Method, 
+    # Line 154 references to  Tutorials Teacher, Python Dictionary setdefault() Method, 
     #https://www.tutorialsteacher.com/python/dict-setdefault?utm_content=cmp-true
     tmp_dict = {}
     for move in saved_moves:
