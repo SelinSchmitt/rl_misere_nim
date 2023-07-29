@@ -118,7 +118,7 @@ def subtract(my_dict, entry, sub):
     return my_dict  
 
 def getReward(tmp_dict):
-    #lines 128 and 134 follow the tutorial from 'Dionysia Lemonaki, Python Reverse List – Reversing an Array in Python, 
+    #lines 128 and 134 are based on 'Dionysia Lemonaki, Python Reverse List – Reversing an Array in Python, 
     #https://www.freecodecamp.org/news/python-reverse-list-reversing-an-array-in-python/'
     
     pos_reward = 1
