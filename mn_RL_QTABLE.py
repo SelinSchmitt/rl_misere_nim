@@ -42,7 +42,7 @@ def playGame():
     available_keys = [key for key in my_dict if my_dict[key] != 0]
 
     #epsilon-greedy:
-    #line 75 references to 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
+    #line 75 refers to 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
     if episode < 100000: 
         print('Exploration unter 100000')
         random_key = random.choice(available_keys)
@@ -139,7 +139,7 @@ def getReward(tmp_dict):
     
   
 def InitializeTable(saved_moves, tmp_dict):
-    # Line 154 references to  Tutorials Teacher, Python Dictionary setdefault() Method, 
+    # Line 154 refers to  Tutorials Teacher, Python Dictionary setdefault() Method, 
     #https://www.tutorialsteacher.com/python/dict-setdefault?utm_content=cmp-true
     tmp_dict = {}
     for move in saved_moves:
