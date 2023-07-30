@@ -1,5 +1,5 @@
 #the following code provides a user interface and game logic to play the game Misére-Nim between 2 human players
-#code structure follows the tutorial 'Prof. Dr. Oliver Hofmann, 2D-Spiele mit pygame, https://www.youtube.com/watch?v=_B5qc3jtPIE'
+#code structure is based on the tutorial 'Prof. Dr. Oliver Hofmann, 2D-Spiele mit pygame, https://www.youtube.com/watch?v=_B5qc3jtPIE'
 import pygame
 import secrets
 from Button import Button
@@ -178,8 +178,7 @@ def disableRows(ui_elements, current_row):
     for button in ui_elements:
         if button.row_nmb != current_row and button.enabled != False:
             button.row_act = False
-          #  if button in deleted_buttons:
-           #    continue        
+       
 def updateDict(ui_elem):
     if ui_elements.index(ui_elem) == 0: 
         ui_dict[1] -= 1
