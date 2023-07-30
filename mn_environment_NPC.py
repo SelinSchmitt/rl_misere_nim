@@ -1,4 +1,4 @@
-#the following code provides a npc player that simulates the winning strategy of misere nim
+#the following code provides a npc player that simulates the winning strategy of Misére-Nim
 #code structure is based on the tutorial 'Prof. Dr. Oliver Hofmann, 2D-Spiele mit pygame, https://www.youtube.com/watch?v=_B5qc3jtPIE'
 import pygame
 import secrets
