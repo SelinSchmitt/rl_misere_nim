@@ -1,3 +1,5 @@
+#the following code provides a npc player that simulates the winning strategy of misere nim
+#code structure is based on the tutorial 'Prof. Dr. Oliver Hofmann, 2D-Spiele mit pygame, https://www.youtube.com/watch?v=_B5qc3jtPIE'
 import pygame
 import secrets
 import random
@@ -108,7 +110,7 @@ def startNPC(updatedDict, button_dict):
         print("GAMEOVER")
 
 def checkForExceptions(keys_left, updatedDict, button_dict, random_k, random_v):
-  
+    #check for exceptions in the game
     exception = False
     keys_left = [key for key in updatedDict.keys() if updatedDict[key] != 0]
     if list(updatedDict.values()).count(1) == 2: #1, 1, ...
@@ -152,7 +154,7 @@ def checkForExceptions(keys_left, updatedDict, button_dict, random_k, random_v):
         exception = True
         return exception 
     
-    elif len(keys_left) == 2 and (list(updatedDict.values()).count(1) == 1 or list(updatedDict.values()).count(2) >= 1): #1, hoher wert 2, hoher wert  or list(updatedDict.values()).count(2) == 1 
+    elif len(keys_left) == 2 and (list(updatedDict.values()).count(1) == 1 or list(updatedDict.values()).count(2) >= 1): 
         largest_pile = max(updatedDict, key=updatedDict.get) 
         largest_value = max(updatedDict.values())
         print('LARGER PILE = ',largest_pile)
@@ -204,8 +206,7 @@ def checkForExceptions(keys_left, updatedDict, button_dict, random_k, random_v):
             
         else:
             return             
-        #1,2,3: wenn 2, 2, 3 ist. wenn 1, 2,4 ist, wenn 2, 
-        #wenn 2, 3, ... oder 1, 2 
+      
     elif len(keys_left) >= 3 and (list(updatedDict.values()).count(2) == 1 and list(updatedDict.values()).count(3) == 1):
         
         print("test)")
