@@ -1,4 +1,4 @@
-#Class Button follows the tutorial from LeMasterTech https://www.youtube.com/watch?v=16DM5Eem0cI
+#Class Button is based on the tutorial from LeMasterTech https://www.youtube.com/watch?v=16DM5Eem0cI
 import pygame
 surface = pygame.display.set_mode((800, 800)) 
 BLACK = (0, 0, 0)
