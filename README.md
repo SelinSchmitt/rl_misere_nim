@@ -9,6 +9,8 @@ mn_RL_QTABLE.py = training of qtable
 
 final_qtable_mn.txt = final qtable and results
 
+mn_environment_NPC.py = Misére-Nim game between a human player and a npc that simulates the winning strategy of Misére-Nim
+
 mn_env_HUMAN.py = Misére-Nim game between two human players with user interface
 
 mn_gamelogic.py = Misére-Nim game between two human players in terminal 
