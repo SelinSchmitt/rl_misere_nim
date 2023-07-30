@@ -1,5 +1,5 @@
 #the following code provides the main game user interface to play Misére-Nim against a trained ai
-#code structure follows the tutorial 'Prof. Dr. Oliver Hofmann, 2D-Spiele mit pygame, https://www.youtube.com/watch?v=_B5qc3jtPIE'
+#code structure is based on the tutorial 'Prof. Dr. Oliver Hofmann, 2D-Spiele mit pygame, https://www.youtube.com/watch?v=_B5qc3jtPIE'
 import pygame
 import secrets
 import random
@@ -96,7 +96,7 @@ def player2(window, font, white, gray):
 
 def startKI(updatedDict): 
     #ai chooses max action from qtable
-    #line 106 and 116 references to 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
+    #line 106 and 116 are based on 'Nedialkov, Python Max Lambda [6 ways], https://iq.opengenus.org/python-max-lambda/ '
     current_state = list(updatedDict.values())
     if current_state:
         for outer_dict, inner_dict in qtable.items(): 
