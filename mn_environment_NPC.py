@@ -263,7 +263,7 @@ def npcRemoveButtons(updatedDict, button_dict, random_k, random_v):
 def chooseRandomNumbers(updatedDict):
   
     available_keys = [key for key in updatedDict if updatedDict[key] != 0]
-    if available_keys: #wenn keys da sind
+    if available_keys:
         random_key = random.choice(available_keys)
         values = updatedDict[random_key]
         random_value = random.randint(1,values)
