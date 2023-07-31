@@ -474,7 +474,7 @@ def createButtonDict():
              
 def gameOver():
     red = (136, 8, 8)
-    window.fill('black') #screen leeren
+    window.fill('black')
     font = pygame.font.SysFont('Georgia', 28, bold=True)    
     gameover = font.render('| GAME OVER: Player %s looses |' % players[current_player], True,red)
     window.blit(gameover, (150, 600)) 
